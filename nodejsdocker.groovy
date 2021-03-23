@@ -1,6 +1,6 @@
 job("gitNdocker-nodeJS-dsl") {
   scm{
-   git('https://github.com/sumitaadityaa/docker-demo.git','main') {  node -> // is hudson.plugins.git.GitSCM
+   git('https://github.com/sumitaadityaa/docker-demo.git','master') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('DSL User')
             node / gitConfigEmail('jenkins-dsl@newtech.academy')
         }
@@ -16,7 +16,7 @@ job("gitNdocker-nodeJS-dsl") {
           dockerBuildAndPublish {
               repositoryName('sumitaadityaa/docker-repo')
               tag('${GIT_REVISION,length=9}')
-              registryCredentials('docker credential')
+              registryCredentials('dockerhub')
               forcePull(false)
               forceTag(false)
               createFingerprints(false)
