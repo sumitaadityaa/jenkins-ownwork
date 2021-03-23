@@ -24,4 +24,3 @@ job("gitNdocker-nodeJS-dsl") {
           }
       }
   }
-}
